@@ -1,5 +1,5 @@
 {% set name = "hpp-manipulation-urdf" %}
-{% set version = "4.12.0" %}
+{% set version = "4.13.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5691e0789b58312091187a2eb05378db4ed5b55d9cb4e88024c1fc130a787ec6
+  sha256: 5e045933062958e46f70d9638e6a2f6fb7aef54786be27ddbf256a2ffc793751
   patches:
     - patches/rt_fix.patch
 
@@ -30,13 +30,13 @@ requirements:
     - urdfdom
     - assimp
     - octomap
-    - hpp-fcl
-    - hpp-util
-    - hpp-statistics
-    - hpp-pinocchio
-    - hpp-constraints
-    - hpp-core
-    - hpp-manipulation
+    - hpp-fcl  1.8.1
+    - hpp-util  {{ version }}
+    - hpp-statistics  {{ version }}
+    - hpp-pinocchio  {{ version }}
+    - hpp-constraints  {{ version }}
+    - hpp-core  {{ version }}
+    - hpp-manipulation  {{ version }}
   run:
     - boost-cpp
     - tinyxml
