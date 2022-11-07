@@ -11,25 +11,25 @@ diff --git tests/CMakeLists.txt tests/CMakeLists.txt
 index 03af858..93d14c4 100644
 --- tests/CMakeLists.txt
 +++ tests/CMakeLists.txt
-@@ -34,6 +34,7 @@
+@@ -30,6 +30,7 @@
  #
  # This macro will create a binary from `NAME.cc' and add it to the test suite.
  #
 +find_library(RT_LIB rt)
- MACRO(ADD_TESTCASE NAME GENERATED)
-   IF (${GENERATED} STREQUAL TRUE)
-    ADD_UNIT_TEST(${NAME} ${CMAKE_CURRENT_BINARY_DIR}/${NAME}.cc)
-@@ -43,6 +44,11 @@ MACRO(ADD_TESTCASE NAME GENERATED)
+ macro(ADD_TESTCASE NAME GENERATED)
+   if (${GENERATED} STREQUAL TRUE)
+    add_unit_test(${NAME} ${CMAKE_CURRENT_BINARY_DIR}/${NAME}.cc)
+@@ -39,6 +40,11 @@ macro(ADD_TESTCASE NAME GENERATED)
  
-   PKG_CONFIG_USE_DEPENDENCY(${NAME} tinyxml)
-   TARGET_LINK_LIBRARIES(${NAME} ${PROJECT_NAME})
+   pkg_config_use_dependency(${NAME} tinyxml)
+   target_link_libraries(${NAME} ${PROJECT_NAME})
 +  if(RT_LIB)
 +    TARGET_LINK_LIBRARIES(${NAME} ${PROJECT_NAME} ${RT_LIB})
 +  else()
 +    TARGET_LINK_LIBRARIES(${NAME} ${PROJECT_NAME} )
 +endif()
- ENDMACRO(ADD_TESTCASE)
+ endmacro(ADD_TESTCASE)
  
- CONFIG_FILES(srdfparser.cc)
+ config_files(srdfparser.cc)
 -- 
 2.25.1
