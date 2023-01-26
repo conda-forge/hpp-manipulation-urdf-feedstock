@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: 214c085eb849cb63ddd7047b6156480f28c3c531b8ca4d956d55f3af32ad57e3
-  patches:
-    - patches/rt_fix.patch
 
 build:
   number: 0
@@ -30,7 +28,7 @@ requirements:
     - urdfdom
     - assimp
     - octomap
-    - hpp-fcl  1.8.1
+    - hpp-fcl
     - hpp-util  {{ version }}
     - hpp-statistics  {{ version }}
     - hpp-pinocchio  {{ version }}
