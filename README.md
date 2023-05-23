@@ -1,11 +1,11 @@
-About hpp-manipulation-urdf
-===========================
+About hpp-manipulation-urdf-feedstock
+=====================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hpp-manipulation-urdf-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/humanoid-path-planner/hpp-manipulation-urdf
 
 Package license: LGPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hpp-manipulation-urdf-feedstock/blob/main/LICENSE.txt)
 
 Summary: hpp-manipulation-urdf subpackage of Humanoid Path Planner suite
 
