@@ -1,5 +1,5 @@
 {% set name = "hpp-manipulation-urdf" %}
-{% set version = "4.15.1" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 214c085eb849cb63ddd7047b6156480f28c3c531b8ca4d956d55f3af32ad57e3
+  sha256: 67416ee8c1b781c3ccdc89a88b0aafee25d37afdb75ac177130a304b9ae7ad9c
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
