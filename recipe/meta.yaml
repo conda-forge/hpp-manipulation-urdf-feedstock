@@ -10,7 +10,7 @@ source:
   sha256: 044a33f97e810f8cfa8f829dfeb7f91c3f92ce9eebfb089e6fa09142f466a661
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
@@ -30,6 +30,8 @@ requirements:
     - assimp
     - octomap
     - hpp-fcl
+    - qhull
+    - qhull-static
     - hpp-util  {{ version }}
     - hpp-statistics  {{ version }}
     - hpp-pinocchio  {{ version }}
@@ -38,6 +40,8 @@ requirements:
     - hpp-manipulation  {{ version }}
   run:
     - tinyxml
+    - qhull
+    - qhull-static
 
 test:
   requires:
